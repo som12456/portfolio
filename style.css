@@ -42,13 +42,13 @@ body {
 
 .banner {
   width: 100%;
-  height: 300px;
+  height: 340px;
   background: linear-gradient(to right, #A0B2C2, #D1D9DF);
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  margin-top: 70px;
+  margin-top: 90px;
 }
 
 .banner-text h1 {
@@ -64,7 +64,7 @@ body {
 }
 
 .profile {
-  padding: 40px 20px;
+  padding: 80px 20px;
   background-color: #f8f9fa;
 }
 
@@ -73,19 +73,19 @@ body {
   height: 120px;
   border-radius: 50%;
   object-fit: cover;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 .profile .intro {
   font-size: 15px;
-  margin-top: 10px;
+  margin-top: 20px;
   color: #666;
-  line-height: 1.6;
+  line-height: 1.8;
 }
 
 .project-section {
-  padding: 50px 20px;
-  margin-bottom: 40px;
+  padding: 60px 40px;
+  margin-bottom: 80px;
   background-color: #ffffff;
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
@@ -96,24 +96,24 @@ body {
 
 .project-section h3 {
   font-size: 22px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   color: #2A384C;
 }
 
 .project-desc {
   font-size: 14px;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   color: #444;
-  line-height: 1.6;
+  line-height: 1.8;
 }
 
 .detail-btn {
   display: inline-block;
-  padding: 6px 14px;
+  padding: 8px 18px;
   background-color: #ffffff;
   color: #2A384C;
   text-decoration: none;
-  border-radius: 16px;
+  border-radius: 20px;
   font-size: 13px;
   transition: background-color 0.3s, color 0.3s;
   border: 1px solid #2A384C;
@@ -125,18 +125,18 @@ body {
 }
 
 footer {
-  padding: 50px 20px;
+  padding: 80px 20px;
   background-color: #2A384C;
   color: #fff;
 }
 
 footer h3 {
   font-size: 20px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 .footer-note {
   font-size: 13px;
-  margin-top: 30px;
+  margin-top: 40px;
   opacity: 0.7;
 }
