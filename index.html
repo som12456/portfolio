@@ -6,46 +6,95 @@
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+  <style>
+    /* 상단 고정 내비게이션 바 */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: #ffffff;
+      z-index: 999;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      padding: 12px 0;
+    }
+
+    .navbar ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      gap: 40px;
+    }
+
+    .navbar ul li a {
+      text-decoration: none;
+      color: #2A384C;
+      font-weight: bold;
+      font-size: 15px;
+      transition: color 0.3s ease;
+    }
+
+    .navbar ul li a.active,
+    .navbar ul li a:hover {
+      color: #A0B2C2;
+    }
+
+    /* nav 높이만큼 배너 아래로 밀기 */
+    .banner {
+      margin-top: 70px;
+    }
+  </style>
 </head>
 <body>
 
-  <header class="banner">
+  <!-- ✅ 상단 내비게이션 -->
+  <nav class="navbar">
+    <ul>
+      <li><a href="#home" class="nav-link active">HOME</a></li>
+      <li><a href="#about" class="nav-link">ABOUT</a></li>
+      <li><a href="#work" class="nav-link">WORK</a></li>
+      <li><a href="#contact" class="nav-link">CONTACT</a></li>
+    </ul>
+  </nav>
+
+  <header id="home" class="banner">
     <div class="banner-text">
       <h1>PORTFOLIO</h1>
       <p>Graphic Designer 이다솜</p>
     </div>
   </header>
 
-  <section class="profile">
-  <img src="img/profile.png" alt="프로필 이미지" class="profile-img">
-  <h2>이다솜</h2>
-  <p>Graphic Designer · Korea</p>
-  <p><a href="mailto:2023112899@hycu.ac.kr">📧 2023112899@hycu.ac.kr</a></p>
-  <p class="intro">사용자의 경험을 디자인하는 것을 좋아하는 디자이너입니다.</p>
-</section>
+  <section id="about" class="profile">
+    <img src="img/profile.png" alt="프로필 이미지" class="profile-img">
+    <h2>이다솜</h2>
+    <p>Graphic Designer · Korea</p>
+    <p><a href="mailto:2023112899@hycu.ac.kr">📧 2023112899@hycu.ac.kr</a></p>
+    <p class="intro">사람과 사람 사이를 이어주는 따뜻한 디자인을 추구합니다. 작은 클릭 하나에도 감동이 담기길 바라며, 매 프로젝트마다 사용자 입장에서 고민하고, 함께 성장하는 디자이너가 되고자 합니다.</p>
+  </section>
 
-<section class="portfolio-grid">
-  <div class="card card1" data-aos="fade-up">
-    <div class="card-content">
-      <div class="icon">📚</div>
-      <h3>PROJECT 1</h3>
-      <p class="subtitle">BOOK INTRODUCTION</p>
-      <a href="https://som12456.github.io/class5_book/" class="detail-btn" target="_blank">상세 보기</a>
+  <section id="work" class="portfolio-grid">
+    <div class="card card1" data-aos="fade-up">
+      <div class="card-content">
+        <div class="icon">📚</div>
+        <h3>PROJECT 1</h3>
+        <p class="subtitle">BOOK INTRODUCTION</p>
+        <a href="https://som12456.github.io/class5_book/" class="detail-btn" target="_blank">상세 보기</a>
+      </div>
     </div>
-  </div>
 
-  <div class="card card2" data-aos="fade-up">
-    <div class="card-content">
-      <div class="icon">🎀</div>
-      <h3>PROJECT 2</h3>
-      <p class="subtitle">CHARACTER WEBSITE</p>
-      <a href="https://som12456.github.io/hero-project/" class="detail-btn" target="_blank">상세 보기</a>
+    <div class="card card2" data-aos="fade-up">
+      <div class="card-content">
+        <div class="icon">🎀</div>
+        <h3>PROJECT 2</h3>
+        <p class="subtitle">CHARACTER WEBSITE</p>
+        <a href="https://som12456.github.io/hero-project/" class="detail-btn" target="_blank">상세 보기</a>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-
-  <footer>
+  <footer id="contact">
     <p>“디자인은 마음을 연결하는 언어라고 생각합니다.”</p>
     <p>© 2024 이다솜 | 웹디자인 수업 과제용 포트폴리오</p>
   </footer>
@@ -53,6 +102,37 @@
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
     AOS.init();
+
+    // 부드러운 스크롤
+    document.querySelectorAll('a.nav-link').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    // 현재 섹션 따라 active 표시
+    const sections = document.querySelectorAll("section, header, footer");
+    const navLinks = document.querySelectorAll("a.nav-link");
+
+    window.addEventListener("scroll", () => {
+      let current = "";
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 80;
+        if (pageYOffset >= sectionTop) {
+          current = section.getAttribute("id");
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove("active");
+        if (link.getAttribute("href") === `#${current}`) {
+          link.classList.add("active");
+        }
+      });
+    });
   </script>
 </body>
 </html>
