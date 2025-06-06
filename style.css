@@ -6,7 +6,7 @@ body {
   text-align: center;
 }
 
-/* ✅ 고정 내비게이션 바 */
+/* 상단 고정 내비게이션 */
 .navbar {
   position: fixed;
   top: 0;
@@ -48,7 +48,7 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
-  margin-top: 70px; /* nav 고정 여백 */
+  margin-top: 70px;
 }
 
 .banner-text h1 {
@@ -80,65 +80,31 @@ body {
   font-size: 15px;
   margin-top: 10px;
   color: #666;
+  line-height: 1.6;
 }
 
-.portfolio-grid {
+.project-section {
+  padding: 50px 20px;
+  margin-bottom: 40px;
   background-color: #ffffff;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
-  padding: 40px 60px;
-}
-
-.card {
-  position: relative;
   border-radius: 10px;
-  overflow: hidden;
-  height: 220px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-  color: #2A384C;
-  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.card1 {
-  background-color: #A0B2C2;
-}
-
-.card2 {
-  background-color: #F6C9D0;
-}
-
-.card:hover {
-  transform: scale(1.03) rotate(-0.3deg);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-}
-
-.card-content {
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.icon {
-  font-size: 28px;
-  margin-bottom: 10px;
-}
-
-.card h3 {
-  font-size: 20px;
+.project-section h3 {
+  font-size: 22px;
   margin-bottom: 10px;
   color: #2A384C;
 }
 
-.subtitle {
+.project-desc {
   font-size: 14px;
-  margin-bottom: 15px;
-  opacity: 0.85;
+  margin-bottom: 20px;
+  color: #444;
+  line-height: 1.6;
 }
 
 .detail-btn {
@@ -150,6 +116,7 @@ body {
   border-radius: 16px;
   font-size: 13px;
   transition: background-color 0.3s, color 0.3s;
+  border: 1px solid #2A384C;
 }
 
 .detail-btn:hover {
@@ -158,8 +125,18 @@ body {
 }
 
 footer {
-  padding: 30px;
+  padding: 50px 20px;
   background-color: #2A384C;
   color: #fff;
-  font-size: 14px;
+}
+
+footer h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.footer-note {
+  font-size: 13px;
+  margin-top: 30px;
+  opacity: 0.7;
 }
